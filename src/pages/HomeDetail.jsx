@@ -1,14 +1,19 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Data from "../fakeData/Dummy";
 
 export default function HomeDetail() {
-  const { id } = useParams();
-  const data = Data[parseInt(index.id - 1)];
+  const params = useParams();
+  const data = Data[parseInt(params.id)];
 
   return (
-    <div>
-      <h1>{data.name}</h1>
+    <div style={{ backgroundColor: "blue" }}>
+      <img src={data.image} alt='image' />
+      <h1>@{data.name}</h1>
+      <h1>{data.follower}</h1>
+      <Link to='/'>
+        <p>back</p>
+      </Link>
     </div>
   );
 }

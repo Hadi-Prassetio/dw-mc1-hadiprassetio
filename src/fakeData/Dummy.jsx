@@ -1,4 +1,4 @@
-import Image from "../../public/logo192";
+// import Image from "../../public/logo192";
 
 const data = [
   {
