@@ -4,12 +4,21 @@ import Data from "../fakeData/Dummy";
 
 export default function Home() {
   return (
-    <div style={{ backgroundColor: "red" }}>
+    <div style={{ margin: "2rem" }}>
       {Data.map((item, index) => (
         <Link to={`/detail/${index}`} key={index}>
-          <img src={item.image} alt='image' />
-          <h4>@{item.name}</h4>
-          <h6>{item.follower}</h6>
+          <div
+            style={{
+              display: "flex",
+              marginBottom: "10px",
+              backgroundColor: "red",
+            }}>
+            <img src={item.image} alt='image' width={100} />
+            <div>
+              <h4>@{item.username}</h4>
+              <h6>Follower : {item.follower}</h6>
+            </div>
+          </div>
         </Link>
       ))}
     </div>
